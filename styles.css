@@ -1,0 +1,521 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Verdana, sans-serif;
+}
+
+/* NAVBAR */
+
+.nav-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "links logo buttons";
+  padding: 30px;
+}
+
+.nav-container .link-items {
+  grid-area: links;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.nav-container .link-items li {
+  list-style: none;
+  font-size: 16px;
+}
+
+.nav-container .link-items li a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+.nav-container .link-items li a:hover {
+  color: rgb(70, 0, 255);
+}
+
+.nav-container .nav-logo {
+  grid-area: logo;
+  font-family: cursive;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-container .nav-buttons {
+  grid-area: buttons;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+}
+
+.login {
+  background-color: #fff;
+}
+
+.login a:hover {
+  color: rgb(70, 0, 255);
+}
+
+.signup {
+  background-color: #000;
+}
+
+.signup a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.signup:hover {
+  background-color: #505050;
+  cursor: pointer;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* MAIN */
+
+.main-container {
+  margin-top: 100px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-container .label {
+  width: 300px;
+  background-color: rgb(255, 170, 213);
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.main-container .label p {
+  text-align: center;
+}
+
+.main-container .main-title h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  color: #000a25;
+}
+
+.main-container .main-subtitle {
+  margin: 0 50px;
+}
+
+.main-container .main-subtitle p {
+  background-color: #fdffa0;
+  padding: 5px;
+  text-align: center;
+}
+
+.getstarted {
+  background-color: #000a25;
+}
+
+.getstarted a {
+  color: white !important;
+  text-decoration: none;
+}
+
+.getstarted:hover {
+  background-color: #001858;
+  cursor: pointer;
+}
+
+/* IMAGE SLIDER */
+/* CREDIT TO: Jack Oliver */
+/* https://codepen.io/studiojvla/pen/qVbQqW */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+.slider-container {
+  margin-bottom: 100px;
+}
+
+.slider-container .slider-title h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #000a25;
+}
+
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.slide {
+  height: 100px;
+  width: 250px;
+}
+
+/* GALLERY */
+
+.gallery-container {
+  margin-bottom: 60px;
+}
+
+.gallery-container h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  color: #000a25;
+  margin-bottom: 30px;
+}
+
+.gallery-container .gallery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.gallery-container .gallery-cards .card {
+  width: 400px;
+  height: 290px;
+  background-color: #ededed;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+.gallery-container .gallery-cards .card:hover {
+  transform: scale(1.05);
+}
+
+.gallery-container .gallery-cards img {
+  width: 400px;
+  height: 250px;
+  border-radius: 15px;
+}
+
+.gallery-container .gallery-cards .card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery-container .gallery-cards .card .user-profile {
+  margin-left: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.gallery-container .gallery-cards .card .user {
+  width: 24px;
+  height: 24px;
+}
+
+.gallery-container .gallery-cards .card .engagement {
+  margin-right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-container .gallery-cards .card .engagement img {
+  width: 18px;
+  height: 18px;
+}
+
+/* DESIGNER HIRE SECTION */
+
+.designer-container {
+  padding: 15px 25px;
+  background-color: #ffda60;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.designer-container .designer-title {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #000a25;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.designer-container .designer-subtitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.designer-container .designer-button {
+  margin-bottom: 10px;
+}
+
+.designer-container .designer-text {
+  margin-bottom: 50px;
+}
+
+.designer-container .designer-text a {
+  cursor: pointer;
+}
+
+.designer-container .designer-text a:hover {
+  color: rgb(0, 162, 255);
+}
+
+.designer-container .designer-button .hire:hover {
+  background-color: #dddddd;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer-container {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-container .nav-logo {
+  font-family: cursive;
+  font-size: 20px;
+}
+
+.footer-container .nav-links .link-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-container .nav-links .link-items li {
+  list-style: none;
+}
+
+.footer-container .nav-links .link-items li a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-container .nav-links .link-items li a:hover {
+  color: rgb(70, 0, 255);
+}
+
+footer .copyright {
+  width: 300px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* RESPONSIVENESS */
+
+@media only screen and (max-width: 1000px) {
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-container .link-items li {
+    font-size: 15px;
+  }
+
+  .nav-container .nav-logo {
+    margin-top: 25px;
+  }
+
+  .nav-container .nav-buttons .btn {
+    font-size: 15px;
+  }
+
+  .main-container {
+    margin-top: 20px;
+    padding: 5px;
+  }
+
+  .main-container .label {
+    width: 230px;
+  }
+
+  .main-container .label p {
+    font-size: 12px;
+  }
+
+  .main-container .main-title h1 {
+    font-size: 3rem;
+  }
+
+  .main-container .main-subtitle p {
+    font-size: 12px;
+  }
+
+  .main-container .main-button .btn {
+    font-size: 15px;
+  }
+
+  .gallery-container h2 {
+    font-size: 2rem;
+  }
+
+  .designer-container .designer-title {
+    font-size: 1.1rem;
+  }
+
+  .designer-container .designer-subtitle {
+    font-size: 16px;
+  }
+
+  .footer-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-container .nav-logo {
+    font-family: cursive;
+    font-size: 14px;
+  }
+
+  .footer-container .nav-links .link-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .footer-container .nav-links .link-items li {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .nav-container .link-items {
+    gap: 5px;
+  }
+
+  .nav-container .link-items li {
+    font-size: 14px;
+  }
+
+  .nav-container .nav-buttons .btn {
+    font-size: 14px;
+  }
+
+  .nav-container .nav-buttons {
+    flex-direction: column;
+  }
+
+  .main-container {
+    margin-top: 20px;
+  }
+
+  .main-container .label {
+    width: 230px;
+  }
+
+  .main-container .label p {
+    font-size: 12px;
+  }
+
+  .main-container .main-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-container .main-subtitle p {
+    font-size: 12px;
+  }
+
+  .main-container .main-button .btn {
+    font-size: 14px;
+  }
+
+  .gallery-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .designer-container .designer-title {
+    font-size: 1.1rem;
+  }
+
+  .designer-container .designer-subtitle {
+    font-size: 15px;
+  }
+}
