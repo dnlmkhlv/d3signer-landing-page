@@ -22,7 +22,7 @@ De3igner Landing Page: https://d3signer-landing-page.vercel.app/
 ## Installation
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/de3igner-landing-page.git
+git clone https://github.com/dnlmkhlv/de3igner-landing-page.git
 ```
 
 2. Open index.html in your web browser.
